@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Onest:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-family: 'Onest', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #cedaeb;
+}
+/*=====================================*/
+
+header{
+    display: flex;
+    justify-content:space-between ;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+header nav a{
+    color : white;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+header nav :hover{
+    color:orange;
+}
+/* logo */
+.logo{   
+    font-weight: bolder;
+    color: white;
+    font-size: 1.6rem;
+}
+.logo span{
+    color: orange;
+}
+/*=====================================*/
+
+.wrapper{
+    width: 65vmin;
+    height: 70vmin;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #08203e;
+    border-radius: 5px;
+    box-shadow: 0 20px 40px rgb(84, 80, 80) ;
+}
+/*=====================================*/
+
+.game-details
+{
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+/*=====================================*/
+.play-board
+{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    background: #030921;
+    grid-template : repeat(30 , 1fr) / repeat(30 , 1fr) ;
+}
+.play-board .food{
+    background: rgb(180, 19, 19);
+}
+.play-board .head{
+    background: rgb(22, 175, 48);
+}
+/*=====================================*/
+.controls
+{
+    display: none;
+    justify-content: space-between;
+}
+.controls i{
+    padding: 25px 0;
+    text-align: center;
+    font-size: 1.3rem;
+    color: aliceblue;
+    width: calc(100% / 4);
+    cursor: pointer;
+    border-right: 1px solid #1f2123;;
+}
+/*=====================================*/
+@media screen and (max-width : 800px) {
+    .wrapper{
+        width: 90vmin;
+        height: 115vmin;
+    }
+    .game-details{
+        font-size: 1rem;
+        padding: 15px 27px;
+    }
+    .controls
+    {
+        display: flex;
+    }
+    .controls i{
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+    header nav a
+    {
+        font-size: 1rem;
+    }
+    .logo{   
+        font-size: 1.3rem;
+    }
+}

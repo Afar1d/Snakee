@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Onest:wght@300&display=swap');
+:root {
+  --clr-neon: orange;
+  --clr-bg: rgb(92, 63, 9);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-family: 'Onest', sans-serif;
+}
+
+body {
+  display: grid;
+  grid-gap: 10px;
+  place-items: center;
+  background: var(--clr-bg);
+
+  color: var(--clr-neon);
+  background-position: center; 
+
+
+}
+
+#id {
+  margin: 10px;
+  font-size: 20px;
+  color: var(--clr-neon);
+}
+
+.neon-button {
+  color: var(--clr-neon);
+  font-size: 4rem;
+  /* rem and em because when i change the font size all change as well */
+  border: 0.125em currentColor solid;
+  padding: 0.25em 1em;
+  /* to make shape more like bottom  */
+  border-radius: 0.25em;
+  display: inline-block;
+  cursor: pointer;
+  /* shap of the mouse */
+  text-decoration: none;
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5),
+    0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.4em currentColor,
+    0 0 0.4em currentColor;
+  position: relative;
+}
+
+.neon-button::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-neon);
+  opacity: 0;
+  background-color: var(--clr-neon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before {
+  opacity: 1;
+}
+
+.neon-button:hover::after,
+.neon-button:focus::after {
+  opacity: 1;
+}
+/*=====================================*/
+
+header{
+  display: flex;
+  justify-content:space-between ;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+}
+header nav a{
+  color : white;
+  font-size: 1.5rem;
+}
+header nav :hover{
+  color:orange;
+}
+/* logo */
+.logo{   
+  font-weight: bolder;
+  color: white;
+  font-size: 1.6rem;
+}
+.logo span{
+  color: orange;
+}
+/*=====================================*/
+
+@media screen and (max-width : 800px) {
+
+  #id {
+
+    font-size: 18px;
+  }
+
+  .neon-button {
+    font-size: 3rem;
+  }
+  header nav a
+  {
+      font-size: 1.2rem;
+  }
+  .logo{   
+      font-size: 1.3rem;
+  }
+}
